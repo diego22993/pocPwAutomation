@@ -7,7 +7,7 @@ node_modules/
 /playwright/.auth/
 
 # Entorno y Secretos (¡Importante!)
-/config/.env*
+/config/env/
 .env
 .env.local
 .env.*.local

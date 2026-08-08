@@ -1,0 +1,36 @@
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Entorno y Secretos (¡Importante!)
+.env
+.env.local
+.env.*.local
+
+# Archivos de ejecuciones y trazas
+/test-results-retry/
+.playwright/
+
+# Logs de dependencias y ejecutores
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos de sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

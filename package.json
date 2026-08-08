@@ -1,0 +1,30 @@
+{
+  "name": "pw-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:qa": "cross-env ENV=qa npx playwright test",
+    "test:stg": "cross-env ENV=stg npx playwright test",
+    "test:prd": "cross-env ENV=prd npx playwright test",
+    "test:qa:smoke": "cross-env ENV=qa npx playwright test --grep @smoke",
+    "test:qa:sanity": "cross-env ENV=qa npx playwright test --grep @sanity",
+    "test:qa:regression": "cross-env ENV=qa npx playwright test --grep @regression",
+    "test:ui": "cross-env ENV=qa npx playwright test --ui",
+    "test:debug": "cross-env ENV=qa npx playwright test --debug",
+    "test:headed": "cross-env ENV=qa npx playwright test --headed",
+    "report": "npx playwright show-report",
+    "codegen": "npx playwright codegen"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2"
+  }
+}

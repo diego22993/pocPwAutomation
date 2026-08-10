@@ -20,7 +20,7 @@ test.describe("Módulo de Autenticación", () => {
   });
 
   // Sobrescribe la sesión para que estas pruebas inicien limpias
-  test.use({ storageState: { cookies: [], origins: [] } });
+  //test.use({ storageState: { cookies: [], origins: [] } });
 
   test.describe("Módulo de Autenticación - Pruebas Limpias", () => {
     test("Validación de error con credenciales inválidas @regression", async ({

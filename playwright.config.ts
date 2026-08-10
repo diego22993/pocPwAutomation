@@ -1,10 +1,15 @@
 // playwright.config.ts
 import { defineConfig, devices } from "@playwright/test";
 import { Config } from "./config/env/env.config";
+import { AUTH_FILE } from "./src/constants/path";
 
 export default defineConfig({
   testDir: "./tests",
 
+  use: {
+    baseURL: Config.BASE_URL || "https://www.saucedemo.com",
+    trace: "on-first-retry",
+  },
   projects: [
     {
       name: "setup",
@@ -13,12 +18,8 @@ export default defineConfig({
     {
       name: "chromium",
       use: {
-        baseURL: Config.BASE_URL || "http://localhost:3000",
-
-        /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-        trace: "on-first-retry",
         ...devices["Desktop Chrome"],
-        storageState: "playwright/.auth/user.json",
+        storageState: AUTH_FILE,
       },
 
       dependencies: ["setup"],

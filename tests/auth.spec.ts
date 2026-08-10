@@ -5,8 +5,6 @@ test.describe("Módulo de Autenticación", () => {
     await loginPage.navigateTo();
 
     //await loginPage.login("standard_user", "secret_sauce");
-
-    //await expect(loginPage.userProfileHeader).toBeVisible();
   });
 
   test("Validación de error con credenciales inválidas @regression", async ({
@@ -19,7 +17,6 @@ test.describe("Módulo de Autenticación", () => {
     await expect(loginPage.errorMessage).toHaveText(errorMessageExpected);
   });
 
-  // Sobrescribe la sesión para que estas pruebas inicien limpias
   //test.use({ storageState: { cookies: [], origins: [] } });
 
   test.describe("Módulo de Autenticación - Pruebas Limpias", () => {

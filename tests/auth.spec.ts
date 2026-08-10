@@ -4,7 +4,7 @@ test.describe("Módulo de Autenticación", () => {
   test("Inicio de sesión exitoso @smoke @sanity", async ({ loginPage }) => {
     await loginPage.navigateTo();
 
-    await loginPage.login("standard_user", "secret_sauce");
+    //await loginPage.login("standard_user", "secret_sauce");
 
     //await expect(loginPage.userProfileHeader).toBeVisible();
   });

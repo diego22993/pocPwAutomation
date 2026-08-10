@@ -21,7 +21,7 @@ jobs:
       env:
         TEST_USER: ${{ secrets.TEST_USER }}
         TEST_PASS: ${{ secrets.TEST_PASS }}
-        BASE_URL: "https://www.saucedemo.com"
+        BASE_URL: ${{ secrets.BASE_URL }}
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

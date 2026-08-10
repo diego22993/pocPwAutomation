@@ -22,3 +22,13 @@ export const Config: AppConfig = {
   TEST_USER: process.env.TEST_USER || "",
   TEST_PASS: process.env.TEST_PASS || "",
 };
+
+const requiredKeys: (keyof AppConfig)[] = ["TEST_USER", "TEST_PASS"];
+const missing = requiredKeys.filter((key) => !Config[key]);
+
+if (missing.length > 0) {
+  throw new Error(
+    `Faltan variables de entorno requeridas: ${missing.join(", ")}. ` +
+      `Verificá tu .env.${process.env.ENV || "qa"} en local, o los Secrets en GitHub Actions.`,
+  );
+}
